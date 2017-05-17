@@ -41,7 +41,7 @@ and open the template in the editor.
 
                         <div class="col-sm-3">
                             <div class="logo">
-                                <a href="#home">MINDS</a>
+                                <a href="#home"> <img src="images/mindslogo.png" height="50" width="50"></a>
                             </div>
                         </div>
 
@@ -272,7 +272,7 @@ and open the template in the editor.
                         <h2>Interested? Come join us now</h2>
 
                         <div class="text-center margin-top-20">
-                            <a class="button button-style button-style-dark button-style-icon fa fa-long-arrow-right smoth-scroll" href="#">Register</a>
+                            <a class="button button-style button-style-dark button-style-icon fa fa-long-arrow-right smoth-scroll" href="registration.php">Register</a>
                         </div>
 
                     </div>    
