@@ -35,7 +35,7 @@ and open the template in the editor.
     <body>
         <header id="home" class="home-section">
 
-            <div class="header-top-area" style="background-color: blue">
+            <div class="header-top-area" style="background-color: #237EF5">
                 <div class="container">
                     <div class="row">
 
