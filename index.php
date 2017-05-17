@@ -272,7 +272,7 @@ and open the template in the editor.
                         <h2>Interested? Come join us now</h2>
 
                         <div class="text-center margin-top-20">
-                            <a class="button button-style button-style-dark button-style-icon fa fa-long-arrow-right smoth-scroll" href="#">Join Now</a>
+                            <a class="button button-style button-style-dark button-style-icon fa fa-long-arrow-right smoth-scroll" href="#">Register</a>
                         </div>
 
                     </div>    
