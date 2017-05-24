@@ -13,6 +13,7 @@ $resultCheck = mysqli_query($link, $queryCheck) or die(mysqli_error($link));
 
 // 1 matching row with username and password is found in table: user is valid
 if(mysqli_num_rows($resultCheck) == 1) {
+    session_start();
     $row = mysqli_fetch_array($resultCheck);
     $_SESSION['user_id'] = $row['id'];
     $_SESSION['username'] = $row['username'];
