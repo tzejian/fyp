@@ -1,17 +1,180 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+include "dbFunctions.php"
+?>
 <html>
     <head>
+                <!-- Favicon -->
+        <link rel="shortcut icon" href="images/favicon/favicon1.ico">
+        <link rel="m-icon" sizes="144x144" type="image/x-icon" href="images/favicon/m-icon.png">
+
+        <!-- All CSS Plugins -->
+        <link rel="stylesheet" type="text/css" href="css/plugin.css">
+
+        <!-- Main CSS Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <!-- Google Web Fonts  -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
+        <!-- All Javascript Plugins  -->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/plugin.js"></script>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyC0HAKwKinpoFKNGUwRBgkrKhF-sIqFUNA"></script>
+        
+        <!-- Main Javascript File  -->
+        <script type="text/javascript" src="js/scripts.js"></script>
+        <script src="js/signUp.js" type="text/javascript"></script>
+
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
         <title></title>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        <header id="home" class="home-section">
+
+            <div class="header-top-area" style="background-color: #237EF5">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-sm-3">
+                            <div class="logo">
+                                <a href="#home">MINDS</a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-9">
+                            <div class="navigation-menu">
+                                <div class="navbar">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    <div class="navbar-collapse collapse">
+                                        <ul class="nav navbar-nav navbar-right">
+                                            <li class="active">
+                                                <a class="smoth-scroll" href="index.php">Home <div class="ripple-wrapper"></div></a>
+                                            </li>
+                                            <li><a class="smoth-scroll" href="#about">About Us</a>
+                                            </li>
+                                            <li><a class="smoth-scroll" href="#profile">Profile</a>
+                                            </li>
+                                            <li><a class="smoth-scroll" href="#donation">Donation</a>
+                                            </li>
+                                            <li><a class="smoth-scroll" href="#training">Training</a>
+                                            </li>
+                                            <li><a class="smoth-scroll" href="#adminProfile">Login</a>
+                                            </li>
+                                            <li><a class="smoth-scroll" href="registration.php">Join US</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="home-section-background" style="background-image:url(images/bg/bg_minds.jpg) " >
+                <div class="display-table">
+                    <div class="display-table-cell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <div class="header-text">
+                                        
+                    
+                
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        
+        
+        
+        <div class="col-md-8 col-md-offset-2">
+                        <div class="page-header">
+                            <p></p>
+                            <h2>Forgot Password?</h2>
+                        </div>
+
+            <form id="defaultForm" method="post" action="doForgotPassword.php" class="form-horizontal">
+                            
+                <p style="color:white">Please enter your <b>registered email address</b> to reset your current password:</p>
+                <br/>
+                
+                
+                
+                              <div class="form-group">
+                                <label class="col-md-3 control-label"style="color:white">Email</label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" name="email" required />
+                                </div>
+                            </div>
+                            
+               
+
+                            <div class="form-group">
+                                <div class="col-md-9 col-md-offset-3">
+                                    <button type="submit" class="ui-btn">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+        
+        
+        
+        
+        
+        
+
+
+       
+
+
+
+
+        <!-- Footer Start -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6 text-left">
+                        <p><span><a href="#about" class="smoth-scroll">About Us</a></span> | <span><a href="#" class="smoth-scroll">MINDS</a></span></p>
+                    </div>
+
+                    <div class="col-md-6 text-right">
+                        <ul class="social-icon">
+                            <li><a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top Start -->
+        <a href="#" class="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+        <!-- Back to Top End -->
     </body>
 </html>
