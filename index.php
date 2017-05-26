@@ -38,7 +38,7 @@ session_start()
 
                         <div class="col-sm-3">
                             <div class="logo">
-                                <a href="#home"> <img src="images/mindslogo.png" height="50" width="50"></a>
+                                <a href="#home"> MINDS</a>
                             </div>
                         </div>
 
