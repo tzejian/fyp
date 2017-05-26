@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start();
 ?>
 <html>
     <head>
@@ -18,66 +18,20 @@ session_start()
         <!-- All Javascript Plugins  -->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/plugin.js"></script>
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyC0HAKwKinpoFKNGUwRBgkrKhF-sIqFUNA"></script>
-        
+
+
         <!-- Main Javascript File  -->
         <script type="text/javascript" src="js/scripts.js"></script>
 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!--        hello im here-->
+        <!--        hello im here-->
         <title></title>
 
     </head>
     <body>
         <header id="home" class="home-section">
-
-            <div class="header-top-area" style="background-color: #237EF5">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-sm-3">
-                            <div class="logo">
-                                <a href="#home"> <img src="images/mindslogo.png" height="50" width="50"></a>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-9">
-                            <div class="navigation-menu">
-                                <div class="navbar">
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                    </div>
-                                    <div class="navbar-collapse collapse">
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li class="active">
-                                                <a class="smoth-scroll" href="#home">Home <div class="ripple-wrapper"></div></a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="#about">About Us</a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="#profile">Profile</a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="#donation">Donation</a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="#training">Training</a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="#adminProfile">Login</a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="#volunteer">Join US</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php include("navbarlogin.php") ?>
 
             <div class="home-section-background" style="background-image:url(images/bg/bg_minds.jpg) " >
                 <div class="display-table">
@@ -87,8 +41,6 @@ session_start()
                                 <div class="col-md-12 text-center">
                                     <div class="header-text">
                                         <p>Testing Main page</p>
-
-
 
 
                                     </div>
@@ -309,6 +261,9 @@ session_start()
         <!-- Back to Top Start -->
         <a href="#" class="scroll-to-top"><i class="fa fa-angle-up"></i></a>
         <!-- Back to Top End -->
+
+
+
 
 
 
