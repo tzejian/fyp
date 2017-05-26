@@ -27,7 +27,7 @@ include "dbFunctions.php"
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title></title>
+        <title>Forgot Password</title>
     </head>
     <body>
         <header id="home" class="home-section">
