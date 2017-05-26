@@ -40,7 +40,7 @@ session_start();
                             <div class="row">
                                 <div class="col-md-12 text-center">
                                     <div class="header-text">
-                                        <p>Testing Main page</p>
+                                        <p>Movement for the Intellectually Disabled of Singapore (MINDS)</p>
 
 
                                     </div>
@@ -83,11 +83,11 @@ session_start();
                     <div class="about-me section-space-padding">
 
                         <h2>User Profile</h2>
-                        <p><img src="images/favicon/download.jpg" style="max-width: 100px;max-height: 100px" class="img-circle"></p>
+                        <p><img src="images/favicon/propertyagent.jpg" style="max-width: 100px;max-height: 100px" class="img-circle"></p>
 
-                        <p>Name: Beer Pasanaran</p>
-                        <p>Gender: n/a</p>
-                        <p>Age: 20</p>
+                        <p>Name: Low Kong Him</p>
+                        <p>Gender: M</p>
+                        <p>Age: 29</p>
                         <p>Email: pogChamp@hotmail.com</p>
                         <p>Mobile Number: 96334351</p>
                         <p>Points Awarded: 10</p>
