@@ -17,9 +17,10 @@ session_start();
         <!-- Google Web Fonts  -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
         <!-- All Javascript Plugins  -->
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/plugin.js"></script>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        
 
 
         <!-- Main Javascript File  -->
