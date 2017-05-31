@@ -2,51 +2,43 @@
 // php file that contains the common database connection code
 session_start();
 include "dbFunctions.php";
-$enteredUsername = $_POST['username'];
-$enteredPassword = $_POST['password'];
 
 $msg = "";
+if (!isset($SESSION['id'])) {
+    if (isset($_POST['username'])) {
+        $enteredUsername = $_POST['username'];
+        $enteredPassword = $_POST['password'];
+        
+        $queryCheck = "SELECT id,username,email FROM user WHERE username='" . $enteredUsername . "' AND password = SHA1('" . $enteredPassword . "')";
+        
+        
+        $resultCheck = mysqli_query($link, $queryCheck)or die(mysqli_error($link));
+        
+        if (mysqli_num_rows($resultCheck)  > 0) { //check for matching records
+            $row = mysqli_fetch_array($resultCheck);
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['username'] = $row['username']; //assign user id from $row to session
+            $_SESSION['email'] = $row['email'];
 
-$queryCheck = "Select * from user where username='$enteredUsername' and password = ('$enteredPassword')";
-
-$resultCheck = mysqli_query($link, $queryCheck)or die(mysqli_error($link));
-
-if(mysqli_num_rows($resultCheck) == 1){ //check for matching records
-    $row = mysqli_fetch_array($resultCheck);
-    $_SESSION['id'] = $row['id'];
-    $_SESSION['username'] = $row['username']; //assign user id from $row to session
-    $_SESSION['name'] = $row['name'];
-    
-    $msg = "<h2>You are logged in as " .$_SESSION['username']."</h2>";
-    $msg .= "<p><a href='index.php'>Home</a>&nbsp<a href='logout.php'>get off</a></p>.</br>";
-    
-
+            /* Redirect browser */
+            header("Location: index.php");
+        } else {
+            $msg = "Sorry, you must enter a valid username and password to log in.";
+        }
+    }
+} else {
+    $msg = "You are already logged in.";
 }
-else{
-    $msg = "<p>Sorry, get out</p>";
-    $msg .= "<p><a href='login.php'>Go back to where u belong</a></p>";
-
-}
-
-
-
-
-mysqli_close($link);
-
-
-
-/* Redirect browser */
-header("Location: index.php");
-
- 
-/* Make sure that code below does not get executed when we redirect. */
-exit;
-
-
-
 ?>
+
+<!-- mysqli_close($link); -->
+
+<!--/* Make sure that code below does not get executed when we redirect. */
+exit; 
+?> -->
 <script type="text/javascript">
-     alert($msg); 
+    
+    alert($msg);
 </script>
 
 <!DOCTYPE html>
@@ -54,10 +46,11 @@ exit;
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title></title>
+        
     </head>
     <body style="background-color:lightcyan;">
-        <?php
-        echo $msg;
-        ?>
+<?php
+echo $msg;
+?>
     </body>
 </html>
