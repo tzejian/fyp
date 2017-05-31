@@ -41,6 +41,8 @@ if (isset($_SESSION['id'])) {
  
         <?php 
         echo $msg;
+        header("Location: index.php");
          ?>
+        
     </body>
 </html>
