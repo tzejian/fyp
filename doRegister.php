@@ -19,7 +19,9 @@ $query = "INSERT INTO `user`(`username`, `password`, `email`, `nric`, `mobile`, 
 $result = mysqli_query($link, $query) or die(mysqli_error($link));
 
 if ($result){
+   
     $message = "Account Created";
+    header ("Location: index.php");
     
 }
 else{
