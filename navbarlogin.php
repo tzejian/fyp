@@ -33,8 +33,6 @@
                                 </li>
                                 <li><a class="smoth-scroll" href="#training">Training</a>
                                 </li>
-                                <li><a class="smoth-scroll" id="login" href="#login.php" rel="external">Login</a>
-                                </li>
                                 <li><a class="smoth-scroll" href="#volunteer">Join US</a>
                                 </li>
                                 <li>
@@ -48,7 +46,7 @@
                                         ?></a>
                                 </li>
                                 
-                                <li><a href="#logout.php"  data-rel="external" class="smoth-scroll">logout</a></li>
+                                <li><a href="logout.php"  data-rel="external" class="smoth-scroll">logout</a></li>
                                 
 
                             </ul>
