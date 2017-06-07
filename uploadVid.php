@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <!-- Favicon -->
@@ -87,12 +82,15 @@ and open the template in the editor.
                             <div class="row">
                                 <div class="col-md-12 text-center">
                                     <div class="header-text">
-                                        <h2>Upload video</h2>
+                                        <form action="viewVideo.php" method="get" enctype="multipart/form-data">
+                                            <h1 style="color: white">Enter Video Key: </h1><br/>
+                                            <input type="text" name="key1" id="key" class="form-control"/>
+                                            <br/>
+                                            <input type="submit" name="submit" class="ui-btn" value="submit"/>
                                         
-                                        <p><a href="#" class="ui-btn">Choose File</a></p>
-                                        
-                                        <p>no file selected</p>
-                                        <p><a href="#" class="ui-btn">Upload File</a></p>
+                                   
+                                 
+                                        </form>
 
 
 
