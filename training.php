@@ -8,9 +8,9 @@ $status = mysqli_query($link, $query) or die(mysqli_error($link));
 
 //Step4: Process results (mysql i_query function will return Boolean for insert/update/delete queries)
 if ($status) {
-    echo "<b> Update to Database! </b>";
+    echo "<b> Successfully Update Video! </b>";
 } else {
-    echo "Review Submission Failed";
+    echo "Undefine the video link";
 }
 
 //Step5: Close connection
@@ -19,7 +19,7 @@ mysqli_close($link);
 ?>
 
 <html>
-  <head>
+     <head>
         <!-- Favicon -->
         <link rel="shortcut icon" href="images/favicon/favicon1.ico">
         <link rel="m-icon" sizes="144x144" type="image/x-icon" href="images/favicon/m-icon.png">
@@ -48,7 +48,7 @@ mysqli_close($link);
     </head>
     
     <body>
-        <header id="home" class="home-section">
+          <header id="home" class="home-section">
 
             <div class="header-top-area">
                 <div class="container">
@@ -74,7 +74,7 @@ mysqli_close($link);
                                     <div class="navbar-collapse collapse">
                                         <ul class="nav navbar-nav navbar-right">
                                             <li class="active">
-                                                <a class="smoth-scroll" href="index.php">Home <div class="ripple-wrapper"></div></a>
+                                                <a class="smoth-scroll" href="#home">Home <div class="ripple-wrapper"></div></a>
                                             </li>
                                             <li><a class="smoth-scroll" href="#">About Us</a>
                                             </li>
@@ -94,12 +94,21 @@ mysqli_close($link);
                     </div>
                 </div>
             </div>
+
+            <div class="home-section-background" style="background-image: url(images/bg/me.jpg)" >
+                <div class="display-table">
+                    <div class="display-table-cell">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <div class="header-text">
         
-        <h1>Video's upload : </h1><br/>
+        
+        <h1 style='color: white'>Video's upload : </h1><br/>
         <iframe style="align-content: center"
           src="https://www.youtube.com/embed/<?php echo $videoid;?>"></iframe><br/>
           
-        </header> 
+          </header>
     </body>
 </html>
 
