@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start();    
 ?>
 <html>
     <head>
@@ -20,7 +20,7 @@ session_start();
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/plugin.js"></script>
-        
+
 
 
         <!-- Main Javascript File  -->
@@ -34,7 +34,12 @@ session_start();
     </head>
     <body>
         <header id="home" class="home-section">
-            <?php include("navbarlogin.php") ?>
+            
+              <?php if($_SESSION['role'] == 'user'){
+                 include "userNavbar.php";
+             }else {
+                  include "navbarlogin.php";
+             } ?>
 
             <div class="home-section-background" style="background-image:url(images/bg/Minds_4.jpg)" >
 
