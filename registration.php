@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "dbFunctions.php"
 ?>
 <html>
@@ -33,7 +34,11 @@ include "dbFunctions.php"
     <body>
         <header id="home" class="home-section">
 
-            <?php include("navbarlogin.php") ?>
+            <?php if($_SESSION['role'] == 'user'){
+                include "userNavbar.php";
+            }else {
+                include "navbarlogin.php";
+            } ?>
 
             <div class="home-section-background" style="background-image:url(images/bg/bg_minds.jpg)" >
                 <div class="display-table">
