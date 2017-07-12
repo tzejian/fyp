@@ -1,9 +1,26 @@
 <?php
 include("dbFunctions.php");
 
-$videoid = $_GET['key1'];
+$videokey = $_GET['key1'];
+$title = $_GET['title'];
+$summary = $_GET['summary'];
 
-$query = "INSERT INTO  `video` ( `video_name` ) VALUES ('$videoid')";
+$query = "INSERT INTO  `video` (`video_key`, `video_name`, `video_desc`) VALUES ('$videokey','$title','$summary')";
+
+$query1 = "SELECT * FROM video";
+
+$query2 = "SELECT * FROM categories";
+$status1 = mysqli_query($link, $query1) or die(mysqli_error($link));
+$status2 = mysqli_query($link, $query2) or die(mysqli_error($link));
+
+while ($row = mysqli_fetch_assoc($status1)) {
+    $video[] = $row;
+}
+while($row1 = mysqli_fetch_assoc($status2)){
+    $cat [] = $row1;
+}
+
+
 $status = mysqli_query($link, $query) or die(mysqli_error($link));
 
 //Step4: Process results (mysql i_query function will return Boolean for insert/update/delete queries)
@@ -15,11 +32,10 @@ if ($status) {
 
 //Step5: Close connection
 mysqli_close($link);
-
 ?>
 
 <html>
-     <head>
+    <head>
         <!-- Favicon -->
         <link rel="shortcut icon" href="images/favicon/favicon1.ico">
         <link rel="m-icon" sizes="144x144" type="image/x-icon" href="images/favicon/m-icon.png">
@@ -46,9 +62,9 @@ mysqli_close($link);
         <meta charset="UTF-8">
         <title></title>
     </head>
-    
+
     <body>
-          <header id="home" class="home-section">
+        <header id="home" class="home-section">
 
             <div class="header-top-area">
                 <div class="container">
@@ -74,7 +90,7 @@ mysqli_close($link);
                                     <div class="navbar-collapse collapse">
                                         <ul class="nav navbar-nav navbar-right">
                                             <li class="active">
-                                                <a class="smoth-scroll" href="#home">Home <div class="ripple-wrapper"></div></a>
+                                                <a class="smoth-scroll" href="index.php">Home <div class="ripple-wrapper"></div></a>
                                             </li>
                                             <li><a class="smoth-scroll" href="#">About Us</a>
                                             </li>
@@ -102,13 +118,44 @@ mysqli_close($link);
                             <div class="row">
                                 <div class="col-md-12 text-center">
                                     <div class="header-text">
-        
-        
-        <h1 style='color: white'>Video's upload : </h1><br/>
-        <iframe style="align-content: center"
-          src="https://www.youtube.com/embed/<?php echo $videoid;?>"></iframe><br/>
-          
-          </header>
-    </body>
-</html>
+
+
+
+                                        <h1 style='color: white'>Categories : </h1>
+                                        <div data-theme="b" class="panel-group" id="accordion">
+                                            <?php for($i=0;$i<count($cat);$i++){?>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading">
+                                                    <h4 class="panel-title">
+                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                                            
+                                                         <?php echo $cat[$i]['category_title']; ?><br/>
+                                                        
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <?php for($j=0;$j<count($video);$j++){?>
+                                                <div id="collapse1" class="panel-collapse collapse in">
+                                                    <div class="panel-body">
+                                                       
+                                                        <iframe style="align-items: center"src="https://www.youtube.com/embed/<?php $video[$j]["video_name"];?>"></iframe><br/> 
+                                                        
+                                                        <?php echo $cat[$i]['category_summary']; ?>
+                                                    </div>
+                                                </div>
+                                                <?php }?>
+                                            </div>
+                                       
+                                            <?php } ?>
+
+                                        <div>
+                                         
+                                        </div>
+
+                                        <br/>
+                    
+
+                                        </header>
+                                        </body>
+                                        </html>
 
