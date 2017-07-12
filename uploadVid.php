@@ -54,17 +54,17 @@
                                     <div class="navbar-collapse collapse">
                                         <ul class="nav navbar-nav navbar-right">
                                             <li class="active">
-                                                <a class="smoth-scroll" href="#home">Home <div class="ripple-wrapper"></div></a>
+                                                <a class="smoth-scroll" href="index.php#home">Home <div class="ripple-wrapper"></div></a>
                                             </li>
-                                            <li><a class="smoth-scroll" href="#">About Us</a>
+                                            <li><a class="smoth-scroll" href="index.php#about">About Us</a>
                                             </li>
-                                            <li><a class="smoth-scroll" href="#">Profile</a>
+                                            <li><a class="smoth-scroll" href="index.php#profile">Profile</a>
                                             </li>
-                                            <li><a class="smoth-scroll" href="#">Donation</a>
+                                            <li><a class="smoth-scroll" href="index.php#donation">Donation</a>
                                             </li>
-                                            <li><a class="smoth-scroll" href="#">logout</a>
+                                            <li><a class="smoth-scroll" href="index.php#home">logout</a>
                                             </li>
-                                            <li><a class="smoth-scroll" href="#">Join US</a>
+                                            <li><a class="smoth-scroll" href="index.php#volunteer">Join US</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -82,11 +82,13 @@
                             <div class="row">
                                 <div class="col-md-12 text-center">
                                     <div class="header-text">
-                                        <form action="viewVideo.php" method="get" enctype="multipart/form-data">
-                                            <h1 style="color: white">Enter Video Key: </h1><br/>
-                                            <input type="text" name="key1" id="key" class="form-control"/>
+                                        <form action="training.php" method="get" enctype="multipart/form-data">
+                                            <h1 style="color: white">Upload Video: </h1><br/>
+                                            <input type="text" name="key1" id="key" class="form-control" placeholder="Insert Video Key"/><br/>
+                                            <input type ="text" name="title" id="title" class="form-control" placeholder="Title"/><br/>
+                                            <textarea rows="auto" cols="auto" name="summary"  id="summary" placeholder="Enter description"></textarea>
                                             <br/>
-                                            <input type="submit" name="submit" class="ui-btn" value="submit"/>
+                                            <a href="training.php"><input type="submit" name="submit" class="ui-btn" value="submit"></a>
                                         
                                    
                                  
