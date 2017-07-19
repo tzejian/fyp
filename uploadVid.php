@@ -46,20 +46,17 @@ if (isset($_SESSION['id'])) {
                             <div class="row">
                                 <div class="col-md-12 text-center">
                                     <div class="header-text">
-                                        <form action="training.php" method="get" enctype="multipart/form-data">
+                                        <form action="doUploadVideo.php" method="get" enctype="multipart/form-data">
                                             <h1 style="color: white">Upload Video: </h1><br/>
-                                            <input type="text" name="key1" id="key" class="form-control" placeholder="Insert Video Key"/><br/>
-                                            <input type ="text" name="title" id="title" class="form-control" placeholder="Title"/><br/>
-                                            <textarea rows="auto" cols="auto" name="summary"  id="summary" placeholder="Enter description"></textarea>
+                                            <input type="text" text-align="center"  name="key1" id="key" class="form-control" placeholder="Insert Video Key"/><br/>
+                                            <input type ="text" text-align="center" name="title" id="title" class="form-control" placeholder="Title"/><br/>
+                                            <textarea rows="auto"  text-align="center" cols="151" name="summary"  id="summary" placeholder="Enter description"></textarea>
                                             <br/>
-                                            <a href="training.php"><input type="submit" name="submit" class="ui-btn" value="submit"></a>
+                                            <a href="doUploadVideo.php"><input type="submit" name="submit" class="ui-btn" value="submit"></a>
                                         
                                    
                                  
                                         </form>
-
-
-
 
                                     </div>
                                 </div>
