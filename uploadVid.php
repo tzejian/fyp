@@ -1,6 +1,10 @@
 <?php
 session_start();
-include "dbFunctions.php"
+if (isset($_SESSION['id'])) {
+    if ($_SESSION['role'] != 'admin') {
+        die("You don't have sufficient rights.");
+    }
+}
 ?>
 <html>
     <head>
@@ -33,7 +37,7 @@ include "dbFunctions.php"
     <body>
         <header id="home" class="home-section">
 
-            <?php include "adminNavbar.php"; ?>
+            <?php include "adminNavbar.php"?>
 
             <div class="home-section-background" style="background-image: url(images/bg/me.jpg)" >
                 <div class="display-table">
