@@ -32,6 +32,8 @@ include "dbFunctions.php";
                                 </li>
                                 <li><a class="smoth-scroll" href="uploadVid.php">Upload Videos</a>
                                 </li>
+                                <li><a class="smoth-scroll" href="upLoad_Quiz.php">Create Quiz</a>
+                                </li>
                                 <li><a class="smoth-scroll" href="#donation">Donation</a>
                                 </li>
                                 <li><a class="smoth-scroll" href="#training">Training</a>
