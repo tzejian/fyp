@@ -39,10 +39,10 @@ session_start();
             if (isset($_SESSION['id'])) {
                 if ($_SESSION['role'] == 'user') {
                     include "userNavbar.php";
-                }else {
+                } else {
                     include "adminNavbar.php";
                 }
-            }else {
+            } else {
                 include "navbarlogin.php";
             }
             ?>
@@ -202,26 +202,68 @@ session_start();
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="section-title">
-                            <h2>Quiz examples</h2>
+                        <?php
+                        $queryCat = "SELECT * FROM `category`";
+                        $resultCat = mysqli_query($link, $queryCat);
 
-                            <script>
-                                (function (d, s, id) {
-                                    var js,
-                                            fjs = d.getElementsByTagName(s)[0],
-                                            p = (('https:' == d.location.protocol) ? 'https://' : 'http://'),
-                                            r = Math.floor(new Date().getTime() / 1000000);
-                                    if (d.getElementById(id)) {
-                                        return;
-                                    }
-                                    js = d.createElement(s);
-                                    js.id = id;
-                                    js.async = 1;
-                                    js.src = p + "www.opinionstage.com/assets/loader.js?" + r;
-                                    fjs.parentNode.insertBefore(js, fjs);
-                                }(document, 'script', 'os-widget-jssdk'));
-                            </script>
-                            <div id="34086" class="os_widget" data-path="/leetzejian/testing" data-of="leetzejian" data-comments="false" data-width="450" ></div>
+                        while ($rowCat = mysqli_fetch_assoc($resultCat)) {
+                            $category[] = $rowCat;
+                        }
+                        ?>
+
+                        <div class="section-title">
+                            <h2>Quiz Questions</h2>
+                            <div class="panel-group" id="accordion">
+                                <?php
+                                for ($i = 0; $i < count($category); $i ++) {
+                                    ?>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i ?>">
+                                                    <?php echo $category[$i]['cat_type'] ?></a>
+                                            </h4>
+                                        </div>
+
+
+                                        <div id="collapse<?php echo $i ?>" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                <?php
+                                                $queryQuestion = "select * from quiz_tested where cat_id = " . $category[$i]['cat_id'];
+
+                                                $resultQns = mysqli_query($link, $queryQuestion);
+                                                $showQns = array();
+
+                                                while ($rowQns = mysqli_fetch_assoc($resultQns)) {
+                                                    $showQns[] = $rowQns;
+                                                }
+                                                for ($j = 0; $j < count($showQns); $j ++) {
+                                                    ?>
+
+                                                    <h4>Questions:<?php echo $showQns[$j]["question_name"]; ?></h4>
+
+                                                    <div class="radio" name="radio">
+                                                        <label><input type="radio" name="mcqRadio<?php echo $j ?>" value="<?php $showQns[$j] ?>"><?php echo $showQns[$j]["q_1"]; ?>
+
+                                                        </label><br>
+                                                        <label><input type="radio" name="mcqRadio<?php echo $j ?>" value="<?php $showQns[$j] ?>"><?php echo $showQns[$j]["q_2"]; ?>
+
+                                                        </label><br>
+                                                        <label><input type="radio" name="mcqRadio<?php echo $j ?>" value="<?php $showQns[$j] ?>"><?php echo $showQns[$j]["q_3"]; ?>
+
+                                                        </label><br>
+
+                                                    </div>
+    <?php } ?>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+<?php }; ?>
+                            </div>
+
+
 
 
                                 
