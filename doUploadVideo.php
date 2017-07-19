@@ -16,7 +16,7 @@ $status2 = mysqli_query($link, $query2) or die(mysqli_error($link));
 while ($row = mysqli_fetch_assoc($status1)) {
     $video[] = $row;
 }
-while($row1 = mysqli_fetch_assoc($status2)){
+while ($row1 = mysqli_fetch_assoc($status2)) {
     $cat [] = $row1;
 }
 
@@ -66,8 +66,8 @@ mysqli_close($link);
     <body>
         <header id="home" class="home-section">
 
-            <?php include "adminNavbar.php"?>
-        
+            <?php include "adminNavbar.php" ?>
+
 
             <div class="home-section-background" style="background-image: url(images/bg/me.jpg)" >
                 <div class="display-table">
@@ -81,39 +81,39 @@ mysqli_close($link);
 
                                         <h1 style='color: white'>Categories : </h1>
                                         <div data-theme="b" class="panel-group" id="accordion">
-                                            <?php for($i=0;$i<count($cat);$i++){?>
-                                            <div class="panel panel-default">
-                                                <div class="panel-heading">
-                                                    <h4 class="panel-title">
-                                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                                            
-                                                         <?php echo $cat[$i]['category_title']; ?><br/>
-                                                        
-                                                        </a>
-                                                    </h4>
-                                                </div>
-                                                <?php for($j=0;$j<count($video);$j++){?>
-                                                <div id="collapse1" class="panel-collapse collapse in">
-                                                    <div class="panel-body">
-                                                       
-                                                        <iframe style="align-items: center"src="https://www.youtube.com/embed/<?php $video[$j]["video_key"];?>"></iframe><br/> 
-                                                        <?php echo "video name : ".$video[$j]['video_name']."<br/>Description:<br/>".$video[$j]['video_desc'];?>
-                                                        <?php echo $cat[$i]['category_summary']; ?>
+                                            <?php for ($i = 0; $i < count($cat); $i++) { ?>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+
+                                                                <?php echo $cat[$i]['category_title']; ?><br/>
+
+                                                            </a>
+                                                        </h4>
                                                     </div>
+                                                    <?php for ($j = 0; $j < count($video); $j++) { ?>
+                                                        <div id="collapse1" class="panel-collapse collapse in">
+                                                            <div class="panel-body">
+
+                                                                <iframe style="align-items: center"src="https://www.youtube.com/embed/<?php echo $video[$j]["video_key"]; ?>"></iframe><br/> 
+                                                                    <?php echo "video name : " . $video[$j]['video_name'] . "<br/>Description:<br/>" . $video[$j]['video_desc']; ?>
+                                                                    <?php echo $cat[$i]['category_summary']; ?>
+                                                            </div>
+                                                        </div>
+                                                    <?php } ?>
                                                 </div>
-                                                <?php }?>
-                                            </div>
-                                       
+
                                             <?php } ?>
 
-                                        <div>
-                                         
-                                        </div>
+                                            <div>
 
-                                        <br/>
-                    
+                                            </div>
 
-                                        </header>
-                                        </body>
-                                        </html>
+                                            <br/>
+
+
+                                            </header>
+                                            </body>
+                                            </html>
 
