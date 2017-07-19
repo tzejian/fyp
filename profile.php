@@ -34,7 +34,13 @@ session_start();
     <body>
         <header id="home" class="home-section">
 
-            <?php include("userNavbar.php") ?>
+            <?php
+            if ($_SESSION['role'] == 'user') {
+                include "userNavbar.php";
+            } else {
+                include "adminNavbar.php";
+            }
+            ?>
 
             <div class="home-section-background" style="background-image:url(images/bg/bg_minds.jpg)" >
                 <div class="display-table">
@@ -56,12 +62,12 @@ session_start();
                 <h2 style="color:white">User Profile</h2>
             </div>
 
-            <form id="defaultForm" method="post" action="doRegister.php" class="form-horizontal">
+            <form id="defaultForm" class="form-horizontal" method="post" action="doChangePassword.php" >
 
                 <div class="form-group">
                     <label class="col-md-3 control-label"style="color:white">Full Name</label>
                     <div class="col-md-5">
-                        <input type="text" class="form-control" name="fullname" required />
+                        <p style="color:white">  <?php echo"" . $_SESSION['fullname'] . "" ?></p>
                     </div>
                 </div>
 
@@ -78,7 +84,7 @@ session_start();
                 <div class="form-group">
                     <label class="col-md-3 control-label"style="color:white">Email</label>
                     <div class="col-md-5">
-                        <p style="color:white">  <?php echo"" . $_SESSION['email'] . "" ?></p>
+                        <p style="color:white">  <?php echo"" . $_SESSION['email'] . "" ?></p>                        
                     </div>
                 </div>
 
@@ -89,69 +95,102 @@ session_start();
                         <p style="color:white">  <?php echo"" . $_SESSION['mobile'] . "" ?></p>
                     </div>
                 </div>
-        </div>
+
+                <div class="form-group">
+                    <div class="page-header">
+                        <p></p>
+                        <h2 style="color:white">Change Password</h2>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"style="color:white">Old password</label>
+                        <div class="col-md-5">
+                            <input type="password" class="form-control" name="oldPass">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"style="color:white">New password</label>
+                        <div class="col-md-5">
+                            <input type="password" class="form-control" name="newPass">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label"style="color:white">Retype new password</label>
+                        <div class="col-md-5">
+                            <input type="password" class="form-control" name="retypePass">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-9 col-md-offset-3">
+                            <button type="submit" class="ui-btn">Change password</button>
+                        </div>
+                    </div>
 
 
-
-
-        <div class="form-group">
-            <div class="col-md-9 col-md-offset-3">
-                <button type="submit" class="ui-btn">Edit</button>
-            </div>
-        </div>
-    </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Footer Start -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-6 text-left">
-                    <p><span><a href="#about" class="smoth-scroll">About Us</a></span> | <span><a href="#" class="smoth-scroll">MINDS</a></span></p>
-                </div>
-
-                <div class="col-md-6 text-right">
-                    <ul class="social-icon">
-                        <li><a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a></li>
-
-                    </ul>
                 </div>
 
 
-            </div>
+
+
+
+            </form>
+
+
+
+
         </div>
-    </footer>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top Start -->
-    <a href="#" class="scroll-to-top"><i class="fa fa-angle-up"></i></a>
-    <!-- Back to Top End -->
 
 
 
 
 
 
-</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Footer Start -->
+        <footer class="footer-section">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6 text-left">
+                        <p><span><a href="#about" class="smoth-scroll">About Us</a></span> | <span><a href="#" class="smoth-scroll">MINDS</a></span></p>
+                    </div>
+
+                    <div class="col-md-6 text-right">
+                        <ul class="social-icon">
+                            <li><a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" target="_blank" class="google-plus"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a></li>
+
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top Start -->
+        <a href="#" class="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+        <!-- Back to Top End -->
+
+
+
+
+
+
+    </body>
 </html>
