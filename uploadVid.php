@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+include "dbFunctions.php"
+?>
 <html>
     <head>
         <!-- Favicon -->
@@ -30,50 +33,7 @@
     <body>
         <header id="home" class="home-section">
 
-            <div class="header-top-area">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-sm-3">
-                            <div class="logo">
-                                <a href="#">MINDS</a>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-9">
-                            <div class="navigation-menu">
-                                <div class="navbar">
-                                    <div class="navbar-header">
-                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                            <span class="icon-bar"></span>
-                                        </button>
-                                    </div>
-                                    <div class="navbar-collapse collapse">
-                                        <ul class="nav navbar-nav navbar-right">
-                                            <li class="active">
-                                                <a class="smoth-scroll" href="index.php#home">Home <div class="ripple-wrapper"></div></a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="index.php#about">About Us</a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="index.php#profile">Profile</a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="index.php#donation">Donation</a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="index.php#home">logout</a>
-                                            </li>
-                                            <li><a class="smoth-scroll" href="index.php#volunteer">Join US</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php include "adminNavbar.php"; ?>
 
             <div class="home-section-background" style="background-image: url(images/bg/me.jpg)" >
                 <div class="display-table">
