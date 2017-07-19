@@ -75,6 +75,7 @@
                     <input type="password" class="form-control" name="password" id="pw" value="" placeholder="password" >
                     <button type="submit" name="submit" class="ui-btn ui-corner-all ui-shadow ui-mini ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>
                     <a href="registration.php" rel="external" class="btn ui-btn">Register</a>
+                    <a href="forgotPassword.php" rel="external" class="btn ui-btn"> Forgot Password </a>
                 </div>
             </form>
         </div>
