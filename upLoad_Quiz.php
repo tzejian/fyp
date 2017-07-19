@@ -33,52 +33,58 @@ if (isset($_SESSION['id'])) {
 
         <meta charset="UTF-8">
         <title></title>
-        <script>
-            $(document).ready(function () {
-                $(".tof").hide();
-                $(".check").hide();
-                $("#testdrop").change(function () {
-                    //alert($(this).val());
-                    if ($(this).val() === '1') {
-                        $(".mcq").show();
-                        $(".tof").hide();
-                        $(".check").hide();
-                    } else if ($(this).val() === '2') {
-                        $(".tof").show();
-                        $(".mcq").hide();
-                        $(".check").hide();
-                    } else {
-                        $(".check").show();
-                        $(".tof").hide();
-                        $(".mcq").hide();
-                    }
-                });
-
-            });
-        </script>
+        
     </head>
     <body>
         <header id="home" class="home-section">
 
-            <?php include "adminNavbar.php"?>
+            <?php include "adminNavbar.php" ?>
 
             <div class="home-section-background" style="background-image: url(images/bg/me.jpg)" >
                 <div class="display-table">
                     <div class="display-table-cell">
                         <div class="container">
                             <div class="row">
-                                <div class="col-md-12 text-center">
-                                    <div class="header-text">
-                                        <form action="training.php" method="get" enctype="multipart/form-data">
-                                            <h1 style="color: white">Upload Video: </h1><br/>
-                                            <input type="text" name="key1" id="key" class="form-control" placeholder="Insert Video Key"/><br/>
-                                            <input type ="text" name="title" id="title" class="form-control" placeholder="Title"/><br/>
-                                            <textarea rows="auto" cols="auto" name="summary"  id="summary" placeholder="Enter description"></textarea>
-                                            <br/>
-                                            <a href="training.php"><input type="submit" name="submit" class="ui-btn" value="submit"></a>
-                                        
-                                   
-                                 
+                                <div class="col-md-12">
+                                    <div class="header-text " >
+                                        <form action="doAddQuiz.php" method="post">
+                                            <fieldset>
+                                                <legend style="color: white">Set up volunteer quiz</legend>
+                                                <div class="form-group">
+                                                    <select id="testdrop" name="test" class="form-control">
+                                                        <option value="1">Multiple choice question</option>
+                                                    </select>
+                                                    <br>
+
+                                                    <select id="catDrop" name="testCat" class="form-control">
+                                                        <option value="1">Hand Sign</option>
+                                                        <option value="2">Head Sign</option>
+
+
+                                                    </select>
+                                                    <br>
+                                                    <label for="qn" style="color: white">Enter quiz question</label>
+                                                    <input type="text" name="qns" class="form-control" id="qn" placeholder="e.g. what should u do ?" >
+                                                    
+                                                    <div class="mcq">
+                                                        <p style="white">Multiple choices questions</p>
+                                                        <div class="radio" name="radio">
+                                                            <label><input type="radio"  name="mcqRadio" value="1" >
+                                                                <input type="text" name="mcqAns1" class="form-control" size="50" placeholder="set your answer ">
+                                                            </label><br>
+
+                                                            <label><input type="radio" name="mcqRadio" value="2">
+                                                                <input type="text" name="mcqAns2" class="form-control" size="50" placeholder="set your answer ">
+                                                            </label><br>
+
+                                                            <label><input type="radio" name="mcqRadio" value="3">
+                                                                <input type="text" name="mcqAns3" class="form-control" size="50" placeholder="set your answer ">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <input class="form-control" type="submit" value="Add Quiz">
+                                                </div>
+                                            </fieldset>
                                         </form>
 
 
