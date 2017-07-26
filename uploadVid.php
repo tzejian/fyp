@@ -5,6 +5,18 @@ if (isset($_SESSION['id'])) {
         die("You don't have sufficient rights.");
     }
 }
+
+include ("dbFunctions.php");
+
+$query = "SELECT * FROM category";
+
+$status = mysqli_query($link, $query) or die(mysqli_error($link));
+
+while($row = mysqli_fetch_assoc($status)){
+    $category[] = $row;
+}
+
+mysqli_close($link);
 ?>
 <html>
     <head>
@@ -48,10 +60,23 @@ if (isset($_SESSION['id'])) {
                                     <div class="header-text">
                                         <form action="doUploadVideo.php" method="get" enctype="multipart/form-data">
                                             <h1 style="color: white">Upload Video: </h1><br/>
+                                            <?php for($i=0;$i<count($category);$i++){?>
+                                            <select name="categories"> 
+                                       <?php echo "<option value=''>".$category[$i]['cat_type']."</option>";?>
+   
+                                              <?php } ?>
+                                            </select>
+                                            
+                                            
+                                            
+                                            
+                                            
                                             <input type="text" text-align="center"  name="key1" id="key" class="form-control" placeholder="Insert Video Key"/><br/>
                                             <input type ="text" text-align="center" name="title" id="title" class="form-control" placeholder="Title"/><br/>
                                             <textarea rows="auto"  text-align="center" cols="151" name="summary"  id="summary" placeholder="Enter description"></textarea>
                                             <br/>
+                                            
+                                            
                                             <a href="doUploadVideo.php"><input type="submit" name="submit" class="ui-btn" value="submit"></a>
                                         
                                    
