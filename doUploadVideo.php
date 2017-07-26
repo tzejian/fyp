@@ -9,7 +9,7 @@ $query = "INSERT INTO  `video` (`video_key`, `video_name`, `video_desc`) VALUES 
 
 $query1 = "SELECT * FROM video";
 
-$query2 = "SELECT * FROM categories";
+$query2 = "SELECT * FROM category";
 $status1 = mysqli_query($link, $query1) or die(mysqli_error($link));
 $status2 = mysqli_query($link, $query2) or die(mysqli_error($link));
 
@@ -87,7 +87,7 @@ mysqli_close($link);
                                                         <h4 class="panel-title">
                                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
 
-                                                                <?php echo $cat[$i]['category_title']; ?><br/>
+                                                                <?php echo $cat[$i]['cat_type']; ?><br/>
 
                                                             </a>
                                                         </h4>
@@ -98,7 +98,7 @@ mysqli_close($link);
 
                                                                 <iframe style="align-items: center"src="https://www.youtube.com/embed/<?php echo $video[$j]["video_key"]; ?>"></iframe><br/> 
                                                                     <?php echo "video name : " . $video[$j]['video_name'] . "<br/>Description:<br/>" . $video[$j]['video_desc']; ?>
-                                                                    <?php echo $cat[$i]['category_summary']; ?>
+                                                                  
                                                             </div>
                                                         </div>
                                                     <?php } ?>
